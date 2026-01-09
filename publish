@@ -1,0 +1,113 @@
+#!/usr/bin/env bash
+
+#TODAY="$(date "+%F")"
+LOCATION="$WTTR_LOCATION"
+OUTPUT_DIR='./_site'
+
+#while getopts "t:" opt; do
+#    case "$opt" in
+#        t)
+#            TODAY="$OPTARG"
+#            ;;
+#        *) exit 1
+#            ;;
+#    esac 
+#done
+#shift $((OPTIND - 1))
+
+
+header() {
+    cat << HEREDOC
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+  body {
+    background-color: black;
+    font-family: monospace;
+    color: white;
+  }
+  main {
+    max-width: 80em;
+  }
+  .ascii-art {
+    font-family: monospace;
+    white-space: pre; /* Preserves spaces and line breaks */
+    display: block; /* Spans are inline by default, making it block can help with layout */
+  }
+  .ascii-text {
+    font-family: monospace;
+    white-space: pre-wrap; /* Preserves spaces and line breaks */
+  }
+</style>
+    <link rel="stylesheet" href="./css/html-ansi.css">
+</head>
+<body>
+<main>
+<h1> Journal for $(date -d "$TODAY" -R | awk '{print $1, $2, $3, $4}')  </h1>
+HEREDOC
+}
+
+
+footer() {
+    cat << HEREDOC 
+</main>
+</body>
+</html>
+HEREDOC
+}
+
+paragraph() {
+    printf '%s\n' "<p class='ascii-text'>$*</p>"
+}
+
+weather-ascii() {
+    curl --silent wttr.in/turlock?0uQ?format
+}
+
+moon_phase_ascii() {
+    local destination="_site/moon_phases/moon_phase-$TODAY"
+    if  [[ -s "$destination" ]]; then #&& [[ "$(stat -c %y "$destination" | awk '{print $1}')" == "$TODAY" ]]; then
+        cat "$destination"
+    else
+        sleep 1
+        curl --silent "wttr.in/Moon@$TODAY" | sed 's/Follow .*@igor_chubin.* for wttr\.in updates//' > "$destination"
+        cat "$destination"
+    fi
+}
+
+moon_phase_html() {
+    printf '%s\n' "<span class='ascii-art'>"
+    moon_phase_ascii | ./tools/bansi-to-html
+    printf '%s\n' "</span>"
+}
+
+weather_ascii() {
+    local destination="/tmp/weather"
+    if [[ "$TODAY" != "$(date "+%F")" ]];then
+        curl --silent "curl wttr.in/${LOCATION}?0?u?Q" | sed 's/Follow .*@igor_chubin.* for wttr\.in updates//' > "$destination"
+        return
+    fi
+
+    if  [[ -s "$destination" ]] && [[ "$(stat -c %Y "$destination")" -lt "$(date -d '1 hour ago' +'%s')" ]]; then
+        cat "$destination"
+    else
+        curl --silent "curl wttr.in/${LOCATION}?0?u?Q" | sed 's/Follow .*@igor_chubin.* for wttr\.in updates//' > "$destination"
+        cat "$destination"
+    fi
+}
+
+
+a=($(nb interstitial_journal/ | grep --color=never -oE '[0-9]{4}-[0-9]{2}-[0-9]{2}'))
+
+for d in "${a[@]}"; do
+    TODAY="$d"
+    if ! [[ -a "$OUTPUT_DIR" ]];then mkdir "$OUTPUT_DIR"; fi
+    (
+        header
+        moon_phase_html
+        paragraph "$(nb show interstitial_journal/$d | ./tools/bansi-to-html)"
+        footer
+    ) > "${OUTPUT_DIR}/${d}.html"
+done
+
