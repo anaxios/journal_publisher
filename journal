@@ -3,10 +3,13 @@
 LOCATION="$WTTR_LOCATION"
 WEATHER_CACHE="/tmp/weather"
 
-while getopts "l" opt; do
+while getopts "lw" opt; do
     case "$opt" in
         l)
             CURRENTLY_LISTENING=1
+            ;;
+        w)
+            WEATHER=1
             ;;
         *)
             echo "bad option"
@@ -17,7 +20,7 @@ done
 shift $((OPTIND - 1))
 
 weather_ascii() {
-    curl --silent "wttr.in/${LOCATION}?0?u?Q" > "$WEATHER_CACHE"
+    curl --silent "wttr.in/${LOCATION}?0?u?Q?T" > "$WEATHER_CACHE"
     cat "$WEATHER_CACHE"
 }
 
@@ -38,6 +41,12 @@ main() {
        # if  [[ ! -s "$WEATHER_CACHE" ]] || [[ "$(stat -c %Y "$WEATHER_CACHE")" -gt "$(date -d '6 hours ago' +'%s')" ]]; then
        #     echo -e "\n\n$(weather_ascii)" | nb edit interstitial_journal/"$(today)" 
        # fi 
+       
+        if [[ $WEATHER ]]; then
+            echo -e "\n<pre>" | nb edit interstitial_journal/"$(today)" 
+            weather_ascii
+            echo -e "\n</pre>" | nb edit interstitial_journal/"$(today)" 
+        fi 
         
         echo -e "\n$(now)" | nb edit interstitial_journal/"$(today)" 
 
@@ -51,6 +60,10 @@ main() {
         publish
         exit
     fi
+
+    echo -e "\n<pre>" | nb edit interstitial_journal/"$(today)" 
+    weather_ascii
+    echo -e "\n</pre>" | nb edit interstitial_journal/"$(today)" 
 
     nb add interstitial_journal/"$(today)"
     publish
