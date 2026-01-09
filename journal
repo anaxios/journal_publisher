@@ -42,7 +42,9 @@ main() {
         echo -e "\n$(now)" | nb edit interstitial_journal/"$(today)" 
 
         if [[ $CURRENTLY_LISTENING ]]; then
-            echo -e "\n<pre>\nCurrently listening to: $(mpc current)" | cowsay | nb edit interstitial_journal/"$(today)\n</pre>" 
+            echo -e "\n<pre>" | nb edit interstitial_journal/"$(today)" 
+            echo -e "Currently listening to: $(mpc current)" | cowsay | nb edit interstitial_journal/"$(today)" 
+            echo -e "\n</pre>" | nb edit interstitial_journal/"$(today)" 
         fi 
 
         nb edit interstitial_journal/"$(today)" 
