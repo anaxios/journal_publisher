@@ -44,7 +44,7 @@ main() {
        
         if [[ $WEATHER ]]; then
             echo -e "\n<pre>" | nb edit interstitial_journal/"$(today)" 
-            weather_ascii
+            weather_ascii | nb edit interstitial_journal/"$(today)"
             echo -e "\n</pre>" | nb edit interstitial_journal/"$(today)" 
         fi 
         
@@ -62,7 +62,7 @@ main() {
     fi
 
     echo -e "\n<pre>" | nb edit interstitial_journal/"$(today)" 
-    weather_ascii
+    weather_ascii | nb edit interstitial_journal/"$(today)"
     echo -e "\n</pre>" | nb edit interstitial_journal/"$(today)" 
 
     nb add interstitial_journal/"$(today)"
