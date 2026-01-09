@@ -46,6 +46,7 @@ header() {
   }
   code {
     font-family: monospace;
+    color: #8B4000;
   }
   li {
     list-style-type: none; 
