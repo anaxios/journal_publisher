@@ -161,5 +161,8 @@ for d in "${entries[@]}"; do
     ) > "${OUTPUT_DIR}/${d}.html"
 done
 
-`cd "$WORKING_DIR" && git add * && git commit -am "publish" && git push origin master`
+push_to_remote() {
+    cd "$WORKING_DIR" && git add * && git commit -am "publish" && git push origin master
+}
+push_to_remote
 
