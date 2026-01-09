@@ -3,13 +3,18 @@
 LOCATION="$WTTR_LOCATION"
 WEATHER_CACHE="/tmp/weather"
 
-while getopts "lw" opt; do
+while getopts "lwe" opt; do
     case "$opt" in
         l)
             CURRENTLY_LISTENING=1
             ;;
         w)
             WEATHER=1
+            ;;
+        e)
+            nb edit interstitial_journal/"$(today)" 
+            publish
+            exit
             ;;
         *)
             echo "bad option"
@@ -61,11 +66,14 @@ main() {
         exit
     fi
 
-    echo -e "\n<pre>" | nb edit interstitial_journal/"$(today)" 
-    weather_ascii | nb edit interstitial_journal/"$(today)"
+    #nb add interstitial_journal/"$(today)"
+
+    # Add weather
+    echo -e "\n<pre>"  | nb add interstitial_journal/"$(today)" 
+    weather_ascii      | nb edit interstitial_journal/"$(today)"
     echo -e "\n</pre>" | nb edit interstitial_journal/"$(today)" 
 
-    nb add interstitial_journal/"$(today)"
+    echo -e "\n$(now)" | nb edit interstitial_journal/"$(today)" --edit
     publish
 }
 
