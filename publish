@@ -161,3 +161,5 @@ for d in "${entries[@]}"; do
     ) > "${OUTPUT_DIR}/${d}.html"
 done
 
+$(cd "$OUTPUT_DIR"; git add *; git commit -am "publish"; git push)
+
