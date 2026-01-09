@@ -1,0 +1,54 @@
+#!/usr/bin/env bash
+
+LOCATION="$WTTR_LOCATION"
+WEATHER_CACHE="/tmp/weather"
+
+while getopts "l" opt; do
+    case "$opt" in
+        l)
+            CURRENTLY_LISTENING=1
+            ;;
+        *)
+            echo "bad option"
+            exit 1
+            ;;
+    esac
+done
+shift $((OPTIND - 1))
+
+weather_ascii() {
+    curl --silent "wttr.in/${LOCATION}?0?u?Q" > "$WEATHER_CACHE"
+    cat "$WEATHER_CACHE"
+}
+
+main() {
+    if ! which nb &> /dev/null; then
+        echo "Requires nb to be installed."
+        exit 1
+    fi
+
+#    if [[ -p /dev/stdin ]]; then
+#        mapfile -t lines
+#        echo "${lines[*]}"
+#    else
+#        echo "fart"
+#    fi
+
+    if nb interstitial_journal/ | grep "$(today)"; then
+       # if  [[ ! -s "$WEATHER_CACHE" ]] || [[ "$(stat -c %Y "$WEATHER_CACHE")" -gt "$(date -d '6 hours ago' +'%s')" ]]; then
+       #     echo -e "\n\n$(weather_ascii)" | nb edit interstitial_journal/"$(today)" 
+       # fi 
+        
+        echo -e "\n$(now)" | nb edit interstitial_journal/"$(today)" 
+
+        ! $CURRENTLY_LISTENING && echo "Currently listening to: $(mpc current)" | cowsay | nb edit interstitial_journal/"$(today)" 
+
+        nb edit interstitial_journal/"$(today)" 
+        exit
+    fi
+
+    nb add interstitial_journal/"$(today)"
+}
+
+main
+

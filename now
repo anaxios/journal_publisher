@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+while getopts "hd" flag; do
+    case "$flag" in
+        d)
+            date "+%H-%M-%S"
+            exit
+            ;;
+        h) 
+            echo "Use -d to format date with dashes."
+            exit
+            ;;
+    esac
+done
+
+date "+%T"
