@@ -154,9 +154,9 @@ for d in "${entries[@]}"; do
         header
         title_figlet "$(date -d "$TODAY" -R | awk '{print $1, $2, $3, $4}')" 
         moon_phase_html
-        #paragraph "$(nb export pandoc interstitial_journal/$d --from markdown_strict --to html | sed --regexp-extended 's/(https?:\/\/\S*)([\s|<])/<a href="\1">\1<\/a>\2/gm')"
+        paragraph "$(nb export pandoc interstitial_journal/$d --from markdown_strict --to html)" # | sed --regexp-extended 's/(https?:\/\/\S*)([\s|<])/<a href="\1">\1<\/a>\2/gm')"
         #paragraph "$(nb show interstitial_journal/$d)"
-        paragraph "$(nb show interstitial_journal/$d | aha -n -b)"
+        #paragraph "$(nb show interstitial_journal/$d | aha -n -b)"
         footer
     ) > "${OUTPUT_DIR}/${d}.html"
 done

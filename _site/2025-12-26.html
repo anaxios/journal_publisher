@@ -74,54 +74,42 @@
 
 
 </span>
-<p class='ascii-text'><span style="color:white;">00:33:38</span>
-<span style="color:white;">    - set up netdata on miyo server and bastian using docker. port: 19999</span>
-<span style="color:white;">    - I moved management of miyo server to use docker context from bastian instead of needing to ssh into the machine directly</span>
-<span style="color:white;">    - I also created a new ssh key for bastian and stored a backup in keepass. Using gpg-agent was impossible over ssh. It was always a pain in the ass, unfortunately.</span>
-
-<span style="color:white;">07:58:45</span>
-<span style="color:white;">    - Signed up for Oracle Cloud again. This time they accepted my debit card.</span>
-<span style="color:white;">    - Oracle server name is artix. It should have been artax but I'm retarded.</span>
-
-<span style="color:white;">08:28:02</span>
-<span style="color:white;">    - Oracle server name would have been artix but they are out of Ampere free teir capacity. Oh well, it was worth a try.</span>
-
-<span style="color:white;">08:58:14</span>
-<span style="color:white;">    - I upgraded the oracle cloud account to pay as you go and set a budget to warn me of charges. I'll keep trying to create a server but I've had no luck so far.</span>
-<span style="color:white;">    - I created a free sql database on oracle cloud and stored the password in keepass.</span>
-
-<span style="color:white;">09:11:44</span>
-<span style="color:white;">    - turned off git gpg signing </span>
-<span style="color:white;">        - </span><span style="color:lime;">`</span><span style="color:lime;">git config --global commit.gpgsign false</span><span style="color:lime;">`</span>
-<span style="color:white;">        - </span><span style="color:lime;">`</span><span style="color:lime;">git config --global tag.gpgsign false</span><span style="color:lime;">`</span>
-
-<span style="color:white;">20:39:33</span>
-<span style="color:white;">    - Oracle Cloud worked and I am writing this note from artix server!</span>
-<span style="color:white;">    - I'm not sure if I'm going to use artix as a main ssh system or just a docker server.</span>
-
-<span style="color:white;">22:37:06</span>
-<span style="color:white;">   </span><span style="color:white;">-</span><span style="color:white;"> </span><span style="color:white;">Put tailscale on artix server.</span>
-<span style="color:white;">   </span><span style="color:white;">-</span><span style="color:white;"> I tried to rsync the postgress docker to artix but all the table data is missing. I guess I need to dump and insert</span>
-<span style="color:white;">   </span><span style="color:white;">-</span><span style="color:white;"> I put irssi on artix</span>
-<span style="color:white;">   </span><span style="color:white;">-</span><span style="color:white;"> maybe I'll figure out how to use the free sql database on oracle cloud instead of running postgres in docker.</span>
-
-<span style="color:white;">23:35:42</span>
-<span style="color:white;">   </span><span style="color:white;">-</span><span style="color:white;"> </span><span style="color:white;">I did a pg_dumpall bastian server and restored it on the artix server and that worked.</span>
-
-<span style="color:white;">18:30:26</span>
-<span style="color:white;">   </span><span style="color:white;">-</span><span style="color:white;"> </span><span style="color:white;">adding mods to cavegame modpack </span>
-<span style="color:white;">        </span><span style="color:white;">-</span><span style="color:white;"> no-telemetry</span>
-<span style="color:white;">        </span><span style="color:white;">-</span><span style="color:white;"> no-chat-reports</span>
-
-<span style="color:white;">19:56:49</span>
-<span style="color:white;">  </span><span style="color:white;">-</span><span style="color:white;"> </span><span style="color:white;">playing around with a selfhosted app noteDiscovery. It's very a simple markdown notes app. No image support other than http links. It does support wiki style links which is nice.</span>
-
-<span style="color:white;">21:26:53</span>
-<span style="color:white;">  </span><span style="color:white;">-</span><span style="color:white;"> </span><span style="color:white;">watching video after video from github Awesome on youtube to find selfhosted apps.</span>
-
-<span style="color:white;">23:05:14</span>
-<span style="color:white;">  </span><span style="color:white;">-</span><span style="color:white;"> </span><span style="color:white;">I'm off to bed. I spent the last few hours watching more Github Awesome videos trying to find self hosted things to install.</span>
-<span style="color:white;">  </span></p>
+<p class='ascii-text'><p>00:33:38
+- set up netdata on miyo server and bastian using docker. port: 19999
+- I moved management of miyo server to use docker context from bastian instead of needing to ssh into the machine directly
+- I also created a new ssh key for bastian and stored a backup in keepass. Using gpg-agent was impossible over ssh. It was always a pain in the ass, unfortunately.</p>
+<p>07:58:45
+- Signed up for Oracle Cloud again. This time they accepted my debit card.
+- Oracle server name is artix. It should have been artax but I'm retarded.</p>
+<p>08:28:02
+- Oracle server name would have been artix but they are out of Ampere free teir capacity. Oh well, it was worth a try.</p>
+<p>08:58:14
+- I upgraded the oracle cloud account to pay as you go and set a budget to warn me of charges. I'll keep trying to create a server but I've had no luck so far.
+- I created a free sql database on oracle cloud and stored the password in keepass.</p>
+<p>09:11:44
+- turned off git gpg signing
+- <code>git config --global commit.gpgsign false</code>
+- <code>git config --global tag.gpgsign false</code></p>
+<p>20:39:33
+- Oracle Cloud worked and I am writing this note from artix server!
+- I'm not sure if I'm going to use artix as a main ssh system or just a docker server.</p>
+<p>22:37:06
+- Put tailscale on artix server.
+- I tried to rsync the postgress docker to artix but all the table data is missing. I guess I need to dump and insert
+- I put irssi on artix
+- maybe I'll figure out how to use the free sql database on oracle cloud instead of running postgres in docker.</p>
+<p>23:35:42
+- I did a pg_dumpall bastian server and restored it on the artix server and that worked.</p>
+<p>18:30:26
+- adding mods to cavegame modpack
+- no-telemetry
+- no-chat-reports</p>
+<p>19:56:49
+- playing around with a selfhosted app noteDiscovery. It's very a simple markdown notes app. No image support other than http links. It does support wiki style links which is nice.</p>
+<p>21:26:53
+- watching video after video from github Awesome on youtube to find selfhosted apps.</p>
+<p>23:05:14
+- I'm off to bed. I spent the last few hours watching more Github Awesome videos trying to find self hosted things to install.</p></p>
 </main>
 </body>
 </html>
