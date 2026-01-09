@@ -162,7 +162,8 @@ for d in "${entries[@]}"; do
 done
 
 push_to_remote() {
-    cd "$WORKING_DIR" && git add * && git commit -am "publish" && git push origin master
+    pushd "$WORKING_DIR" && git add * && git commit -am "publish" && git push origin master
+    popd
 }
 push_to_remote
 
