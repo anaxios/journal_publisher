@@ -48,7 +48,7 @@ main() {
        # fi 
        
         if [[ $WEATHER ]]; then
-            echo -e "\n<pre>" | nb edit interstitial_journal/"$(today)" 
+            echo -e "\n<pre class="ascii-art">" | nb edit interstitial_journal/"$(today)" 
             weather_ascii | nb edit interstitial_journal/"$(today)"
             echo -e "\n</pre>" | nb edit interstitial_journal/"$(today)" 
         fi 
@@ -56,7 +56,7 @@ main() {
         echo -e "\n$(now)" | nb edit interstitial_journal/"$(today)" 
 
         if [[ $CURRENTLY_LISTENING ]]; then
-            echo -e "\n<pre>" | nb edit interstitial_journal/"$(today)" 
+            echo -e "\n<pre class="ascii-art">" | nb edit interstitial_journal/"$(today)" 
             echo -e "Currently listening to: $(mpc current)" | cowsay | nb edit interstitial_journal/"$(today)" 
             echo -e "\n</pre>" | nb edit interstitial_journal/"$(today)" 
         fi 
@@ -69,7 +69,7 @@ main() {
     #nb add interstitial_journal/"$(today)"
 
     # Add weather
-    echo -e "\n<pre>"  | nb add interstitial_journal/"$(today)" 
+    echo -e "\n<pre class="ascii-art">"  | nb add interstitial_journal/"$(today)" 
     weather_ascii      | nb edit interstitial_journal/"$(today)"
     echo -e "\n</pre>" | nb edit interstitial_journal/"$(today)" 
 
