@@ -147,7 +147,7 @@ entries=($(nb interstitial_journal/ | grep --color=never -oE '[0-9]{4}-[0-9]{2}-
 #make index.html
 (
     header
-    title_figlet "Evil Bob's Journal"
+    title_figlet "EVIL BOBS DIARY"
     paragraph "Entries:" "$(ul "$(for entry in "${entries[@]}"; do list_item "$(href "$entry")"; done)")"
     kilroysay "Kilroy was here"
     footer
