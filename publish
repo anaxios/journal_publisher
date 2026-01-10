@@ -13,11 +13,11 @@ HEREDOC
 
 while getopts "t:h" opt; do
     case "$opt" in
-        *) 
+        *)
             usage
-            exit 
+            exit
             ;;
-    esac 
+    esac
 done
 shift $((OPTIND - 1))
 
@@ -31,16 +31,16 @@ header() {
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
     <style>
         body {
-          background-color: black;
+          background-color: #121212;
           font-family: 'Noto Sans Mono', monospace;
           font-size: 12px;
-          color: white;
+          color: #E0E0E0;
         }
         a:link {
-          color: white;
+          color: #E0E0E0;
         }
         a:visited,a:hover {
-          color: grey;
+          color: #888888;
         }
         main {
           max-width: 70em;
@@ -48,13 +48,13 @@ header() {
         }
         code {
           font-family: monospace;
-          color: #ff5f5f;
+          color: #B0B0B0;
         }
         li {
-          list-style-type: none; 
+          list-style-type: none;
         }
         li::before {
-          content: "- "; 
+          content: "- ";
         }
         .ascii-art {
           font-size: 9px;
@@ -81,7 +81,7 @@ title() {
 }
 
 footer() {
-    cat << HEREDOC 
+    cat << HEREDOC
 </main>
 </body>
 </html>
@@ -160,7 +160,7 @@ for d in "${entries[@]}"; do
     if ! [[ -a "$OUTPUT_DIR" ]];then mkdir "$OUTPUT_DIR"; fi
     (
         header
-        title_figlet "$(date -d "$TODAY" -R | awk '{print $1, $2, $3, $4}')" 
+        title_figlet "$(date -d "$TODAY" -R | awk '{print $1, $2, $3, $4}')"
         moon_phase_html
         paragraph "$(nb export pandoc interstitial_journal/$d --from markdown --to html)" # | sed --regexp-extended 's/(https?:\/\/\S*)([\s|<])/\["\1"\]\(\1\)/gm')"
         #paragraph "$(nb show interstitial_journal/$d)"
