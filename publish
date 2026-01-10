@@ -57,6 +57,7 @@ header() {
           content: "- "; 
         }
         .ascii-art {
+          font-size: 10px;
           white-space: pre; /* Preserves spaces and line breaks */
           display: block; /* Spans are inline by default, making it block can help with layout */
         }
