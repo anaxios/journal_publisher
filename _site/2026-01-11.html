@@ -94,7 +94,38 @@
 <ul>
 <li>I found <a href="https://juicefs.com">https://juicefs.com</a> which mounts an s3 compatible storage locally and encrypts the data in transit and at rest.</li>
 <li>I also found <a href="https://bunny.net/">https://bunny.net/</a> to use as storage.</li>
-</ul></p>
+</ul>
+<p>05:01:46</p>
+<ul>
+<li><p>I ended up using backblaze as the backend to juicefs (bunny.net only has sftp). The setup of juicefs is a little involved but their docs are good enough that I figured it out. I set up encryption and postgres so I can connect to the volume from any computer on my tailscale network. The nice thing about backblaze is that 1TB is $6 so even if I wanted to upload Jacob’s entire collection it wouldn’t even be $3 a month to store. As it is now, it will be a few cents a month.</p></li>
+<li><p>To mount the juicefs volume you need the RSA encryption key stored in the environment variable <code>$JFS_RSA_PASSPHRASE</code> you also need to to tell it where the database is and how to connect with a postgres url. I have it automount on artix with systemd because I can pass it the keys it needs automatically.</p></li>
+<li><p>I couldn’t get it to automount on atreyu because the juicefs binary is not able to be linked to the appropriate place in <code>/sbin/mount.juicefs</code> because that part of the filesystem is readonly.</p></li>
+<li><p>I had to restore a database from backup because postgres changed a default and the container wasn’t storing the databases to the volume. Luckily I made a backup with databasus.</p></li>
+<li><p>I restored the backup with the wrong user, luckily I found this insane looking loop that I used to change the owner of each table back to the right user. I need to actually learn how to manage a postgres database and not just wing it like a cowboy.</p></li>
+</ul>
+<pre><code>-- Begin an anonymous PL/pgSQL code block
+DO
+$$
+-- Declare a record variable to hold table names
+DECLARE
+    tbl RECORD;
+-- Begin the procedural block
+BEGIN
+    -- Loop through each table in the specified schema (e.g., &#39;public&#39;)
+    FOR tbl IN
+        -- Select all tables from the schema &#39;public&#39;
+        SELECT tablename
+        FROM pg_catalog.pg_tables
+        WHERE schemaname = &#39;public&#39;  -- Change &#39;public&#39; to target a different schema if needed
+    LOOP
+        -- Execute the ALTER TABLE command to change the owner
+        EXECUTE &#39;ALTER TABLE public.&#39; || quote_ident(tbl.tablename) || &#39; OWNER TO new_owner&#39;;
+        -- Note: Replace &#39;public&#39; with your schema and &#39;new_owner&#39; with the new owner&#39;s username
+    END LOOP;
+-- End the procedural block
+END;
+$$;
+</code></pre></p>
 </main>
 </body>
 </html>
