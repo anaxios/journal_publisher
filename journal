@@ -47,13 +47,13 @@ main() {
        #     echo -e "\n\n$(weather_ascii)" | nb edit interstitial_journal/"$(today)"
        # fi
 
-        if [[ $WEATHER ]]; then
-            echo -e "\n<pre class="ascii-art">" | nb edit interstitial_journal/"$(today)"
-            weather_ascii | nb edit interstitial_journal/"$(today)"
-            echo -e "\n</pre>" | nb edit interstitial_journal/"$(today)"
-        fi
+        #if [[ $WEATHER ]]; then
+        #    echo -e "\n<pre class="ascii-art">" | nb edit interstitial_journal/"$(today)"
+        #    weather_ascii | nb edit interstitial_journal/"$(today)"
+        #    echo -e "\n</pre>" | nb edit interstitial_journal/"$(today)"
+        #fi
 
-        echo -e "\n$(now)" | nb edit interstitial_journal/"$(today)"
+        echo -e "\n## $(now)" | nb edit interstitial_journal/"$(today)"
 
         if [[ $CURRENTLY_LISTENING ]]; then
             echo -e "\n<pre class="ascii-art">" | nb edit interstitial_journal/"$(today)"

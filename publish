@@ -105,9 +105,7 @@ moon_phase_ascii() {
         #echo "moon phase cache hit" >&2
         cat "$destination"
     else
-        echo "moon phase cache miss" >&2
         curl --silent "wttr.in/Moon@$TODAY" | sed 's/Follow .*@igor_chubin.* for wttr\.in updates//' > "$destination"
-        sleep 1
         cat "$destination"
     fi
 }
