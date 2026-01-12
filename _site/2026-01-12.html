@@ -43,6 +43,12 @@
         .ascii-text {
           white-space: pre-wrap; /* Preserves spaces and line breaks */
         }
+        .ascii-banner{
+          font-size: 12px;
+          line-height: 1.0;
+          white-space: pre; /* Preserves spaces and line breaks */
+          display: block; /* Spans are inline by default, making it block can help with layout */
+        }
     </style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -101,7 +107,7 @@
 <p>To change the pane layout <prefix> + space.</p>
 <h2 id="section-2">06:44:36</h2>
 <p>I fixed an off by one bug in the comment banner script</p>
-<pre class=ascii-art>
+<pre class=ascii-banner>
 ################################################################################
 #                                                                              #
 #                              Now I can do this!                              #
