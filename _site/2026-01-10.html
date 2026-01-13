@@ -63,22 +63,22 @@
         white-space: pre; /* Preserves spaces and line breaks */
         display: block; /* Spans are inline by default, making it block can help with layout */
       }
+
       .border-gradient {
         border: var(--xxs) solid;
         padding: var(--m);
+        border-image-slice: 1;
         border-image-source: linear-gradient(
           135deg,
           rgba(197, 48, 197, 0.08867296918767509) 2%,
           rgba(48, 122, 197, 0.0802696078431373) 39%,
           rgba(197, 122, 48, 0.0718662464985994) 91%
         );
-        border-image-slice: 1;
       }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="fonts.googleapis.com" rel="stylesheet" />
-    <link rel="stylesheet" href="./css/html-ansi.css" />
   </head>
   <body>
     <main class="border-gradient">
@@ -197,6 +197,6 @@
 <p>KDE has a stupid shortcut system so I first wanted to use a hotkey daemon. I found this: <a href="https://github.com/waycrate/swhkd">https://github.com/waycrate/swhkd</a> but I had to use debian in distrobox to compile it. Setting it up was not working. I got tired of fiddling and did it the KDE way. I really wanted the setup to be agnostic of what window manager/desktop I use.</p>
 <h2 id="section-4">12:23:12</h2>
 <p>Maybe there’s something wrong with me, but I want to use Perl. As much a I love Bash, it gets pretty hairy pretty fast.</p></p>
-</main>
-</body>
+        </main>
+    </body>
 </html>

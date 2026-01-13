@@ -63,22 +63,22 @@
         white-space: pre; /* Preserves spaces and line breaks */
         display: block; /* Spans are inline by default, making it block can help with layout */
       }
+
       .border-gradient {
         border: var(--xxs) solid;
         padding: var(--m);
+        border-image-slice: 1;
         border-image-source: linear-gradient(
           135deg,
           rgba(197, 48, 197, 0.08867296918767509) 2%,
           rgba(48, 122, 197, 0.0802696078431373) 39%,
           rgba(197, 122, 48, 0.0718662464985994) 91%
         );
-        border-image-slice: 1;
       }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="fonts.googleapis.com" rel="stylesheet" />
-    <link rel="stylesheet" href="./css/html-ansi.css" />
   </head>
   <body>
     <main class="border-gradient">
@@ -151,6 +151,6 @@
 <p>Added a weather thingy.</p>
 <h2 id="section-4">19:48:05</h2>
 <p>Found a list of tui apps: <a href="https://github.com/rothgar/awesome-tuis/?tab=readme-ov-file">https://github.com/rothgar/awesome-tuis/?tab=readme-ov-file</a></p></p>
-</main>
-</body>
+        </main>
+    </body>
 </html>

@@ -63,22 +63,22 @@
         white-space: pre; /* Preserves spaces and line breaks */
         display: block; /* Spans are inline by default, making it block can help with layout */
       }
+
       .border-gradient {
         border: var(--xxs) solid;
         padding: var(--m);
+        border-image-slice: 1;
         border-image-source: linear-gradient(
           135deg,
           rgba(197, 48, 197, 0.08867296918767509) 2%,
           rgba(48, 122, 197, 0.0802696078431373) 39%,
           rgba(197, 122, 48, 0.0718662464985994) 91%
         );
-        border-image-slice: 1;
       }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="fonts.googleapis.com" rel="stylesheet" />
-    <link rel="stylesheet" href="./css/html-ansi.css" />
   </head>
   <body>
     <main class="border-gradient">
@@ -129,6 +129,6 @@
 <h2 id="section-4">23:50:49</h2>
 <p>##llama on liberachat irc uses Limnoria bot.</p>
 <p>wodencafe from ##llama told me about <a href="https://xpra.org">https://xpra.org</a> “screen for X11” remote desktop software. I has a very cool feature of being able to forward single application that integrate into the local desktop well.</p></p>
-</main>
-</body>
+        </main>
+    </body>
 </html>

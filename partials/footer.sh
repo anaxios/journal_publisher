@@ -2,8 +2,8 @@
 
 footer() {
     cat << HEREDOC
-</main>
-</body>
+        </main>
+    </body>
 </html>
 HEREDOC
 }
