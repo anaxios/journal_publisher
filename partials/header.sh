@@ -22,7 +22,8 @@ header() {
         font-smooth: never;
       }
       body {
-        background-color: #121212;
+      /*  background-color: #444444; */
+        background-color: #141414;
         font-family: "Noto Sans Mono", monospace;
         font-size: 0.75rem;
         color: #e0e0e0;
@@ -39,18 +40,29 @@ header() {
         font-weight: bold;
       }
       main {
+        background-color: #121212;
         max-width: 38.5rem;
         margin: 0 auto;
       }
       code {
-        font-family: monospace;
         color: #b0b0b0;
+        white-space:pre-wrap;
+      }
+      ul {
+        word-break: break-word;
+        padding-inline-start: var(--l);
+        list-style-position: inside;
+        list-style-type: none;
       }
       li {
-        list-style-type: none;
+        white-space: normal;
+        list-style-position: outside;
+        position: relative;
       }
       li::before {
         content: "- ";
+        position: absolute;
+        text-indent: calc(var(--m) * -1);
       }
       .ascii-art {
         font-size: 0.625rem; /* 0.625rem 10px */
@@ -80,9 +92,6 @@ header() {
       }
 }
     </style>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="fonts.googleapis.com" rel="stylesheet" />
   </head>
   <body>
     <main class="border-gradient">

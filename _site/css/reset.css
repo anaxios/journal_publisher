@@ -12,12 +12,33 @@
   --xxs: calc(var(--xs) / var(--phi));
   --xxxs: calc(var(--xxs) / var(--phi));
 
-  --font-family-base: Noto Sans Mono;
+  --font-family-base: IBMPlexMono;
   --font-family-base-line-height: var(--m);
-  --font-family-heading: Noto Sans Mono;
+  --font-family-heading: IBMPlexMono;
   --font-family-heading-line-height: var(--m);
-  --font-family-code: Noto Sans Mono;
+  --font-family-code: IBMPlexMono;
   --body-max-width: 36rem;
+}
+
+@font-face {
+  font-family: IBMPlexMono; /* set name */
+  src: url(../assets/font/IBMPlexMono-Regular.ttf); /* url of the font */
+}
+@font-face {
+  font-family: IBMPlexMono; /* set name */
+  src: url(../assets/font/IBMPlexMono-Bold.ttf); /* url of the font */
+  font-weight: bold;
+}
+@font-face {
+  font-family: IBMPlexMono; /* set name */
+  src: url(../assets/font/IBMPlexMono-Italic.ttf); /* url of the font */
+  font-style: italic, oblique;
+}
+@font-face {
+  font-family: IBMPlexMono; /* set name */
+  src: url(../assets/font/IBMPlexMono-BoldItalic.ttf); /* url of the font */
+  font-weight: bold;
+  font-style: italic, oblique;
 }
 
 @layer layout {

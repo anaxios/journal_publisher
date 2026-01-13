@@ -18,7 +18,8 @@
         font-smooth: never;
       }
       body {
-        background-color: #121212;
+      /*  background-color: #444444; */
+        background-color: #141414;
         font-family: "Noto Sans Mono", monospace;
         font-size: 0.75rem;
         color: #e0e0e0;
@@ -35,18 +36,29 @@
         font-weight: bold;
       }
       main {
+        background-color: #121212;
         max-width: 38.5rem;
         margin: 0 auto;
       }
       code {
-        font-family: monospace;
         color: #b0b0b0;
+        white-space:pre-wrap;
+      }
+      ul {
+        word-break: break-word;
+        padding-inline-start: var(--l);
+        list-style-position: inside;
+        list-style-type: none;
       }
       li {
-        list-style-type: none;
+        white-space: normal;
+        list-style-position: outside;
+        position: relative;
       }
       li::before {
         content: "- ";
+        position: absolute;
+        text-indent: calc(var(--m) * -1);
       }
       .ascii-art {
         font-size: 0.625rem; /* 0.625rem 10px */
@@ -76,9 +88,6 @@
       }
 }
     </style>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="fonts.googleapis.com" rel="stylesheet" />
   </head>
   <body>
     <main class="border-gradient">
@@ -141,11 +150,12 @@
 <p>Refreshed my knowledge of vim buffers. I never use them but it is a hassle to not use the yank ‘0’ buffer.</p>
 <p>‘:reg’ shows buffers.</p>
 <p>To use a register:</p>
-<pre><code>- &#39;&quot;&#39; then the buffer &#39;a&#39; (or any register) then the action &#39;y&#39; (or any available action).
-- To append to a register use &#39;SHIFT&#39; then &#39;A&#39;.</code></pre>
-<p>macros are just key presses recorded into registers.</p>
-<pre><code>- To start recording: &#39;q&#39; then a register &#39;a&#39;.
-- To run a macro: &#39;@&#39; then the register where it was stored.</code></pre>
+<ul>
+<li><p>‘“’ then the buffer ‘a’ (or any register) then the action ‘y’ (or any available action).</p></li>
+<li><p>To append to a register use ‘SHIFT’ then ‘A’. macros are just key presses recorded into registers.</p></li>
+<li><p>To start recording: ‘q’ then a register ‘a’.</p></li>
+<li><p>To run a macro: ‘@’ then the register where it was stored.</p></li>
+</ul>
 <h2 id="section-1">02:59:25</h2>
 <pre class=ascii-art>
  ________________________________
@@ -175,11 +185,13 @@
 </pre>
 <p>I found a less contrasty black and white palette for the journal.</p>
 <p>Monochromatic Minimalism</p>
-<pre><code>- Background: #121212 (charcoal black)
-- Primary Text: #E0E0E0 (light gray)
-- Secondary Text: #B0B0B0 (medium gray)
-- Borders/Dividers: #444444 (dark gray)
-- Accent: #888888 (soft gray)</code></pre>
+<ul>
+<li>Background: #121212 (charcoal black)</li>
+<li>Primary Text: #E0E0E0 (light gray)</li>
+<li>Secondary Text: #B0B0B0 (medium gray)</li>
+<li>Borders/Dividers: #444444 (dark gray)</li>
+<li>Accent: #888888 (soft gray)</li>
+</ul>
 <h2 id="section-3">05:21:57</h2>
 <pre class=ascii-art>
  _________________________________________
