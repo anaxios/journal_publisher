@@ -33,8 +33,8 @@ title() {
     printf '%s\n' "<h1>$*</h1>"
 }
 
-paragraph() {
-    printf '%s\n' "<p class='ascii-text'>$*</p>"
+div() {
+    printf '%s\n' "<div class='ascii-text'>$*</div>"
 }
 
 title_figlet() {
@@ -105,7 +105,7 @@ for d in "${entries[@]}"; do
         header
         title_figlet "$(date -d "$TODAY" -R | awk '{print $1, $2, $3, $4}')"
         moon_phase_html
-        paragraph "$(nb export pandoc interstitial_journal/$d --from markdown --to html)" # | sed --regexp-extended 's/(https?:\/\/\S*)([\s|<])/\["\1"\]\(\1\)/gm')"
+        div "$(nb export pandoc interstitial_journal/$d --from markdown --to html)" # | sed --regexp-extended 's/(https?:\/\/\S*)([\s|<])/\["\1"\]\(\1\)/gm')"
         #paragraph "$(nb show interstitial_journal/$d)"
         #paragraph "$(nb show interstitial_journal/$d | aha -n -b)"
         footer
