@@ -15,6 +15,7 @@ header() {
       href="https://raw.githubusercontent.com/anaxios/css-reset/refs/heads/master/reset.css"
     />
     <style>
+      @layer normal {
       :root {
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
@@ -67,7 +68,6 @@ header() {
         white-space: pre; /* Preserves spaces and line breaks */
         display: block; /* Spans are inline by default, making it block can help with layout */
       }
-
       .border-gradient {
         border: var(--xxs) solid;
         padding: var(--m);
@@ -79,6 +79,7 @@ header() {
           rgba(197, 122, 48, 0.0718662464985994) 91%
         );
       }
+}
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
