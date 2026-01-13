@@ -85,7 +85,7 @@ header() {
     <link rel="stylesheet" href="./css/html-ansi.css" />
   </head>
   <body>
-    <main class="border-gradient"></main>
+    <main class="border-gradient">
 HEREDOC
 }
 
