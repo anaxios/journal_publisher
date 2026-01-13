@@ -13,7 +13,7 @@ while getopts "lwe" opt; do
             ;;
         e)
             nb edit interstitial_journal/"$(today)"
-            publish
+            publish -p
             exit
             ;;
         *)
@@ -62,7 +62,7 @@ main() {
         fi
 
         nb edit interstitial_journal/"$(today)"
-        publish
+        publish -p
         exit
     fi
 
@@ -72,7 +72,7 @@ main() {
     weather html  | nb add interstitial_journal/"$(today)"
 
     echo -e "\n## $(now)" | nb edit interstitial_journal/"$(today)" --edit
-    publish
+    publish -p
 }
 
 main
