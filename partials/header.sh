@@ -50,12 +50,13 @@ header() {
       }
       ul {
         word-break: break-word;
-        padding-inline-start: var(--xl);
+        padding-inline-start: var(--xxl);
         list-style-position: inside;
         list-style-type: none;
       }
       li {
         white-space: normal;
+        list-style-position: outside;
         position: relative;
       }
       li::before {
