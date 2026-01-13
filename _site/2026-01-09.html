@@ -4,6 +4,16 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
     <style>
+        :root {
+              --m: 1rem;
+              --l: calc(var(--m) * 1.618);
+              --xl: calc(var(--l) * 1.618);
+              --xxl: calc(var(--xl) * 1.618);
+              --s: calc(var(--m) * 0.618);
+              --xs: calc(var(--s) * 0.618);
+              --xxs: calc(var(--xs) * 0.618);
+              --gap: var(--m);
+        }
         body {
           background-color: #121212;
           font-family: 'Noto Sans Mono', monospace;
@@ -22,7 +32,7 @@
         }
         main {
           max-width: 50em;
-          margin: 0 auto;
+          margin: 0 auto
           border-color: pink;
           border-width: 1px;
           border-style: solid;
@@ -52,6 +62,17 @@
           white-space: pre; /* Preserves spaces and line breaks */
           display: block; /* Spans are inline by default, making it block can help with layout */
         }
+        .border-gradient {
+          border: var(--xxs) solid;
+          padding: var(--m);
+          border-image-source: linear-gradient(
+            135deg,
+            rgba(197, 48, 197, 0.08867296918767509) 2%,
+            rgba(48, 122, 197, 0.0802696078431373) 39%,
+            rgba(197, 122, 48, 0.0718662464985994) 91%
+          );
+          border-image-slice: 1;
+        }
     </style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -59,7 +80,7 @@
 <link rel="stylesheet" href="./css/html-ansi.css">
 </head>
 <body>
-<main>
+<main class="border-gradient">
 <p class='ascii-art'><span style="color:#f92461;"> </span><span style="color:#f82165;">_</span><span style="color:#f71e69;">_</span><span style="color:#f51c6e;">_</span><span style="color:#f41972;">_</span><span style="color:#f21776;">_</span><span style="color:#f0147a;"> </span><span style="color:#ee127e;"> </span><span style="color:#ec1083;"> </span><span style="color:#ea0e87;"> </span><span style="color:#e70c8b;"> </span><span style="color:#e50a8f;">_</span><span style="color:#e20994;"> </span><span style="color:#df0798;"> </span><span style="color:#dd069c;"> </span><span style="color:#da05a0;"> </span><span style="color:#d704a4;"> </span><span style="color:#d303a8;"> </span><span style="color:#d002ac;">_</span><span style="color:#cd02b0;">_</span><span style="color:#c901b4;">_</span><span style="color:#c601b8;"> </span><span style="color:#c201bb;"> </span><span style="color:#bf01bf;"> </span><span style="color:#bb01c3;">_</span><span style="color:#b701c6;">_</span><span style="color:#b301ca;">_</span><span style="color:#b002cd;"> </span><span style="color:#ac02d1;"> </span><span style="color:#a803d4;"> </span><span style="color:#a404d7;"> </span><span style="color:#a005da;"> </span><span style="color:#9b06dd;"> </span><span style="color:#9708e0;"> </span><span style="color:#9309e2;"> </span><span style="color:#8f0be5;">_</span><span style="color:#8b0ce7;"> </span><span style="color:#870eea;"> </span><span style="color:#8210ec;"> </span><span style="color:#7e12ee;"> </span><span style="color:#7a14f0;"> </span><span style="color:#7617f2;"> </span><span style="color:#7119f4;"> </span><span style="color:#6d1cf5;"> </span><span style="color:#691ff7;"> </span><span style="color:#6521f8;"> </span><span style="color:#6124fa;"> </span><span style="color:#5d27fb;"> </span><span style="color:#592afc;"> </span><span style="color:#552dfc;"> </span><span style="color:#5131fd;"> </span><span style="color:#4d34fe;">_</span><span style="color:#4938fe;">_</span><span style="color:#453bfe;">_</span><span style="color:#413ffe;">_</span><span style="color:#3e42fe;"> </span><span style="color:#3a46fe;"> </span><span style="color:#374afe;"> </span><span style="color:#334efe;">_</span><span style="color:#3052fd;">_</span><span style="color:#2d56fc;">_</span><span style="color:#295afb;"> </span><span style="color:#265efa;">_</span><span style="color:#2362f9;">_</span><span style="color:#2166f8;">_</span><span style="color:#1e6af7;">_</span><span style="color:#1b6ef5;"> </span><span style="color:#1973f3;"> </span><span style="color:#1677f2;"> </span><span style="color:#147bf0;">_</span><span style="color:#127fee;">_</span><span style="color:#1083eb;"> </span><span style="color:#0e88e9;"> </span><span style="color:#0c8ce7;"> </span><span style="color:#0a90e4;"></span>
 <span style="color:#f51c6e;">|</span><span style="color:#f41972;"> </span><span style="color:#f21776;"> </span><span style="color:#f0147a;">_</span><span style="color:#ee127e;">_</span><span style="color:#ec1083;">_</span><span style="color:#ea0e87;">|</span><span style="color:#e70c8b;"> </span><span style="color:#e50a8f;">_</span><span style="color:#e20994;">_</span><span style="color:#df0798;">(</span><span style="color:#dd069c;">_</span><span style="color:#da05a0;">)</span><span style="color:#d704a4;"> </span><span style="color:#d303a8;"> </span><span style="color:#d002ac;"> </span><span style="color:#cd02b0;"> </span><span style="color:#c901b4;">/</span><span style="color:#c601b8;"> </span><span style="color:#c201bb;">_</span><span style="color:#bf01bf;"> </span><span style="color:#bb01c3;">\</span><span style="color:#b701c6;"> </span><span style="color:#b301ca;">/</span><span style="color:#b002cd;"> </span><span style="color:#ac02d1;">_</span><span style="color:#a803d4;"> </span><span style="color:#a404d7;">\</span><span style="color:#a005da;"> </span><span style="color:#9b06dd;"> </span><span style="color:#9708e0;"> </span><span style="color:#9309e2;"> </span><span style="color:#8f0be5;"> </span><span style="color:#8b0ce7;"> </span><span style="color:#870eea;">|</span><span style="color:#8210ec;"> </span><span style="color:#7e12ee;">|</span><span style="color:#7a14f0;"> </span><span style="color:#7617f2;">_</span><span style="color:#7119f4;">_</span><span style="color:#6d1cf5;"> </span><span style="color:#691ff7;">_</span><span style="color:#6521f8;"> </span><span style="color:#6124fa;">_</span><span style="color:#5d27fb;"> </span><span style="color:#592afc;">_</span><span style="color:#552dfc;">_</span><span style="color:#5131fd;"> </span><span style="color:#4d34fe;"> </span><span style="color:#4938fe;"> </span><span style="color:#453bfe;">|</span><span style="color:#413ffe;">_</span><span style="color:#3e42fe;">_</span><span style="color:#3a46fe;">_</span><span style="color:#374afe;"> </span><span style="color:#334efe;">\</span><span style="color:#3052fd;"> </span><span style="color:#2d56fc;">/</span><span style="color:#295afb;"> </span><span style="color:#265efa;">_</span><span style="color:#2362f9;"> </span><span style="color:#2166f8;">\</span><span style="color:#1e6af7;">_</span><span style="color:#1b6ef5;">_</span><span style="color:#1973f3;">_</span><span style="color:#1677f2;"> </span><span style="color:#147bf0;">\</span><span style="color:#127fee;"> </span><span style="color:#1083eb;">/</span><span style="color:#0e88e9;"> </span><span style="color:#0c8ce7;">/</span><span style="color:#0a90e4;">_</span><span style="color:#0994e2;"> </span><span style="color:#0798df;"> </span><span style="color:#069ddc;"></span>
 <span style="color:#f0147a;">|</span><span style="color:#ee127e;"> </span><span style="color:#ec1083;">|</span><span style="color:#ea0e87;">_</span><span style="color:#e70c8b;"> </span><span style="color:#e50a8f;">|</span><span style="color:#e20994;"> </span><span style="color:#df0798;">'</span><span style="color:#dd069c;">_</span><span style="color:#da05a0;">_</span><span style="color:#d704a4;">|</span><span style="color:#d303a8;"> </span><span style="color:#d002ac;">|</span><span style="color:#cd02b0;"> </span><span style="color:#c901b4;"> </span><span style="color:#c601b8;"> </span><span style="color:#c201bb;">|</span><span style="color:#bf01bf;"> </span><span style="color:#bb01c3;">|</span><span style="color:#b701c6;"> </span><span style="color:#b301ca;">|</span><span style="color:#b002cd;"> </span><span style="color:#ac02d1;">|</span><span style="color:#a803d4;"> </span><span style="color:#a404d7;">(</span><span style="color:#a005da;">_</span><span style="color:#9b06dd;">)</span><span style="color:#9708e0;"> </span><span style="color:#9309e2;">|</span><span style="color:#8f0be5;"> </span><span style="color:#8b0ce7;"> </span><span style="color:#870eea;">_</span><span style="color:#8210ec;"> </span><span style="color:#7e12ee;"> </span><span style="color:#7a14f0;">|</span><span style="color:#7617f2;"> </span><span style="color:#7119f4;">|</span><span style="color:#6d1cf5;">/</span><span style="color:#691ff7;"> </span><span style="color:#6521f8;">_</span><span style="color:#6124fa;">`</span><span style="color:#5d27fb;"> </span><span style="color:#592afc;">|</span><span style="color:#552dfc;"> </span><span style="color:#5131fd;">'</span><span style="color:#4d34fe;">_</span><span style="color:#4938fe;"> </span><span style="color:#453bfe;">\</span><span style="color:#413ffe;"> </span><span style="color:#3e42fe;"> </span><span style="color:#3a46fe;"> </span><span style="color:#374afe;"> </span><span style="color:#334efe;">_</span><span style="color:#3052fd;">_</span><span style="color:#2d56fc;">)</span><span style="color:#295afb;"> </span><span style="color:#265efa;">|</span><span style="color:#2362f9;"> </span><span style="color:#2166f8;">|</span><span style="color:#1e6af7;"> </span><span style="color:#1b6ef5;">|</span><span style="color:#1973f3;"> </span><span style="color:#1677f2;">|</span><span style="color:#147bf0;">_</span><span style="color:#127fee;">_</span><span style="color:#1083eb;">)</span><span style="color:#0e88e9;"> </span><span style="color:#0c8ce7;">|</span><span style="color:#0a90e4;"> </span><span style="color:#0994e2;">'</span><span style="color:#0798df;">_</span><span style="color:#069ddc;"> </span><span style="color:#05a1d9;">\</span><span style="color:#04a5d6;"> </span><span style="color:#03a9d3;"></span>
