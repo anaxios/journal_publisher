@@ -59,7 +59,7 @@ header() {
         display: block; /* Spans are inline by default, making it block can help with layout */
       }
       .ascii-text {
-        white-space: pre-wrap; /* Preserves spaces and line breaks */
+        white-space: pre-wrap; /* Preserves spaces and line breaks but allows wrapping */
       }
       .ascii-banner {
         font-size: 0.75rem;
