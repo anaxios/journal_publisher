@@ -39,7 +39,7 @@ header() {
         font-weight: bold;
       }
       main {
-        min-width: var(--body-max-width);
+        max-width: calc(10 + var(--body-max-width));
         margin: 0 auto;
       }
       code {
