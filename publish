@@ -46,7 +46,7 @@ header() {
         body {
           background-color: #121212;
           font-family: 'Noto Sans Mono', monospace;
-          font-size: 12px;
+          font-size: 0.75rem;
           color: #E0E0E0;
         }
         a:link {
@@ -56,7 +56,7 @@ header() {
           color: #888888;
         }
         h2 {
-          font-size: 12px;
+          font-size: 0.75rem;
           font-weight: bold;
         }
         main {
@@ -75,7 +75,7 @@ header() {
           content: "- ";
         }
         .ascii-art {
-          font-size: 64rem;
+          font-size: 0.625rem; /* 0.625rem 10px */
           line-height: 1.0;
           white-space: pre; /* Preserves spaces and line breaks */
           display: block; /* Spans are inline by default, making it block can help with layout */
@@ -84,7 +84,7 @@ header() {
           white-space: pre-wrap; /* Preserves spaces and line breaks */
         }
         .ascii-banner{
-          font-size: 12px;
+          font-size: 0.75rem;
           line-height: 1.0;
           white-space: pre; /* Preserves spaces and line breaks */
           display: block; /* Spans are inline by default, making it block can help with layout */
