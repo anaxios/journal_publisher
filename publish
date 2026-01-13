@@ -13,8 +13,11 @@ usage() {
 HEREDOC
 }
 
-while getopts "t:h" opt; do
+while getopts "t:hp" opt; do
     case "$opt" in
+        p)
+            PUSH=1
+            ;;
         *)
             usage
             exit
@@ -110,10 +113,10 @@ for d in "${entries[@]}"; do
 done
 
 push_to_remote() {
-   # pushd "$WORKING_DIR"
-    git add *
-    git commit -am "publish" && git push origin master
-   # popd
+    if [[ "$PUSH" ]]; then
+        git add *
+        git commit -am "publish" && git push origin master
+    fi
 }
 push_to_remote
 

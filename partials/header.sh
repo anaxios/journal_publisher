@@ -39,7 +39,7 @@ header() {
         font-weight: bold;
       }
       main {
-        max-width: calc(10 + var(--body-max-width));
+        max-width: 38.5rem;
         margin: 0 auto;
       }
       code {
