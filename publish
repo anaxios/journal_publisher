@@ -76,7 +76,7 @@ header() {
         }
         .ascii-art {
           font-size: 0.625rem; /* 0.625rem 10px */
-          line-height: 1.0;
+          line-height: 1.1;
           white-space: pre; /* Preserves spaces and line breaks */
           display: block; /* Spans are inline by default, making it block can help with layout */
         }
