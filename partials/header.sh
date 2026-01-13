@@ -20,6 +20,12 @@ header() {
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         font-smooth: never;
+        --font-family-base: "Noto Sans Mono";
+        --font-family-base-line-height: var(--m);
+        --font-family-heading: "Noto Sans Mono";
+        --font-family-heading-line-height: var(--m);
+        --font-family-code: monospace;
+        --body-max-width: ;
       }
       body {
         background-color: #121212;
