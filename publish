@@ -109,7 +109,7 @@ for d in "${entries[@]}"; do
         header
         title_figlet "$(date -d "$TODAY" -R | awk '{print $1, $2, $3, $4}')"
         moon_phase_html
-        div "$(nb export pandoc interstitial_journal/$d --from markdown --to html)" # | sed --regexp-extended 's/(https?:\/\/\S*)([\s|<])/\["\1"\]\(\1\)/gm')"
+        paragraph "$(nb export pandoc interstitial_journal/$d --from markdown --to html)" # | sed --regexp-extended 's/(https?:\/\/\S*)([\s|<])/\["\1"\]\(\1\)/gm')"
         #paragraph "$(nb show interstitial_journal/$d)"
         #paragraph "$(nb show interstitial_journal/$d | aha -n -b)"
         footer
