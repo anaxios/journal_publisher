@@ -12,7 +12,7 @@ header() {
     />
     <link
       rel="stylesheet"
-      href="https://raw.githubusercontent.com/anaxios/css-reset/refs/heads/master/reset.css"
+      href="css/reset.css"
     />
     <style>
       @layer normal {
