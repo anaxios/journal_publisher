@@ -56,7 +56,6 @@ header() {
       }
       li {
         white-space: normal;
-        list-style-position: outside;
         position: relative;
       }
       li::before {
