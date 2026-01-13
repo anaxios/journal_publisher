@@ -92,7 +92,7 @@ entries=($(nb list interstitial_journal/ | grep --color=never -oE '[0-9]{4}-[0-9
 (
     header
     title_figlet "EVIL BOBS DIARY"
-    paragraph "Entries:" "$(ul "$(for entry in "${entries[@]}"; do list_item "$(href "$entry")"; done)")"
+    div "Entries:" "$(ul "$(for entry in "${entries[@]}"; do list_item "$(href "$entry")"; done)")"
     kilroysay "Kilroy was here"
     footer
 ) > "${OUTPUT_DIR}/index.html"
