@@ -5,6 +5,8 @@ WORKING_DIR="$HOME/Projects/journal_publisher"
 OUTPUT_DIR="$WORKING_DIR/_site"
 LOCATION="$WTTR_LOCATION"
 
+pushd "$WORKING_DIR"
+
 usage() {
     cat <<HEREDOC
     Reguires: aha awk figlet lolcat cowsay
@@ -108,8 +110,11 @@ for d in "${entries[@]}"; do
 done
 
 push_to_remote() {
-    pushd "$WORKING_DIR" && git add * && git commit -am "publish" && git push origin master
-    popd
+   # pushd "$WORKING_DIR"
+    git add *
+    git commit -am "publish" && git push origin master
+   # popd
 }
 push_to_remote
 
+popd
