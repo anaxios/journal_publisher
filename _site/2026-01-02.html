@@ -46,18 +46,17 @@
       }
       ul {
         word-break: break-word;
-        padding-inline-start: var(--xxl);
+        padding-inline-start: var(--m);
         list-style-position: inside;
         list-style-type: none;
       }
       li {
         white-space: normal;
         list-style-position: outside;
-        position: relative;
       }
       li::before {
         content: "- ";
-        text-indent: calc(var(--m) * -1);
+        text-indent: calc(var(--s) * -1);
       }
       .ascii-art {
         font-size: 0.625rem; /* 0.625rem 10px */
