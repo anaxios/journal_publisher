@@ -39,7 +39,7 @@ header() {
         font-weight: bold;
       }
       main {
-        max-width: 36rem;
+        max-width: 66rem;
         min-width: 36rem;
         margin: 0 auto;
       }

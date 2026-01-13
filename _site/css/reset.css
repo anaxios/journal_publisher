@@ -12,12 +12,12 @@
   --xxs: calc(var(--xs) / var(--phi));
   --xxxs: calc(var(--xxs) / var(--phi));
 
-  --font-family-base: "Noto Sans Mono";
+  --font-family-base: Noto Sans Mono;
   --font-family-base-line-height: var(--m);
-  --font-family-heading: "Noto Sans Mono";
+  --font-family-heading: Noto Sans Mono;
   --font-family-heading-line-height: var(--m);
-  --font-family-code: monospace;
-  --body-max-width: 90ch;
+  --font-family-code: Noto Sans Mono;
+  --body-max-width: 66rem;
 }
 
 @layer layout {
