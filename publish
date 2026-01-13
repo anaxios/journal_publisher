@@ -50,7 +50,8 @@ header() {
           max-width: 50em;
           margin: 0 auto;
           border-color: pink;
-          border-width: 1rem;
+          border-width: 1px;
+          border-style: solid;
         }
         code {
           font-family: monospace;
