@@ -28,7 +28,6 @@ title() {
     printf '%s\n' "<h1>$*</h1>"
 }
 
-
 paragraph() {
     printf '%s\n' "<p class='ascii-text'>$*</p>"
 }
