@@ -25,7 +25,7 @@ header() {
         --font-family-heading: "Noto Sans Mono";
         --font-family-heading-line-height: var(--m);
         --font-family-code: monospace;
-        --body-max-width: ;
+        --body-max-width: 90ch;
       }
       body {
         background-color: #121212;
