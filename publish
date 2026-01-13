@@ -60,8 +60,8 @@ header() {
           font-weight: bold;
         }
         main {
-          max-width: 35rem;
-          min-width: 35rem;
+          max-width: 37rem;
+          min-width: 37rem;
           margin: 0 auto
         }
         code {
