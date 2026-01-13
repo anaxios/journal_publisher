@@ -50,7 +50,7 @@ header() {
       }
       ul {
         word-break: break-word;
-        padding-inline-start: var(--l);
+        padding-inline-start: var(--xl);
         list-style-position: inside;
         list-style-type: none;
       }
