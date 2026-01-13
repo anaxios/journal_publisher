@@ -61,7 +61,6 @@ header() {
       }
       li::before {
         content: "- ";
-        position: absolute;
         text-indent: calc(var(--m) * -1);
       }
       .ascii-art {
