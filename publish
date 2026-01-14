@@ -100,26 +100,32 @@ entries=($(nb list interstitial_journal/ | grep --color=never -oE '[0-9]{4}-[0-9
 (
     header
     title_figlet "EVIL BOBS DIARY"
-    div "$(paragraph "Entries:" "$(ul "$(for entry in "${entries[@]}"; do list_item "$(href "$entry")"; done)")")"
+    #div "$(paragraph "Entries:" "$(ul "$(for entry in "${entries[@]}"; do list_item "$(href "$entry")"; done)")")"
 
+    for entry in "${entries[@]}"; do
+        TODAY="$entry"
+        #if ! [[ -a "$OUTPUT_DIR" ]];then mkdir "$OUTPUT_DIR"; fi
+        title_figlet "$(date -d "$TODAY" -R | awk '{print $1, $2, $3, $4}')"
+        moon_phase_html
+        href "$entry"
+        paragraph "$(nb export pandoc interstitial_journal/$entry --from markdown --to html)"
+    done
 
     kilroysay "Kilroy was here"
     footer
 ) > "${OUTPUT_DIR}/index.html"
 
 # make journal entry pages
-for d in "${entries[@]}"; do
-    TODAY="$d"
+for entry in "${entries[@]}"; do
+    TODAY="$entry"
     if ! [[ -a "$OUTPUT_DIR" ]];then mkdir "$OUTPUT_DIR"; fi
     (
         header
         title_figlet "$(date -d "$TODAY" -R | awk '{print $1, $2, $3, $4}')"
         moon_phase_html
-        paragraph "$(nb export pandoc interstitial_journal/$d --from markdown --to html)" # | sed --regexp-extended 's/(https?:\/\/\S*)([\s|<])/\["\1"\]\(\1\)/gm')"
-        #paragraph "$(nb show interstitial_journal/$d)"
-        #paragraph "$(nb show interstitial_journal/$d | aha -n -b)"
+        paragraph "$(nb export pandoc interstitial_journal/$entry --from markdown --to html)"
         footer
-    ) > "${OUTPUT_DIR}/${d}.html"
+    ) > "${OUTPUT_DIR}/${entry}.html"
 done
 
 push_to_remote() {
