@@ -161,20 +161,19 @@
 <h2 id="section-2">04:36:12</h2>
 <p>Looks like they are going all in with AI. Pete Hegseth want to use it for the Department of War <a href="https://youtu.be/37rV4AJvaxk?si=4tuTRZTdNcdRT28n">https://youtu.be/37rV4AJvaxk?si=4tuTRZTdNcdRT28n</a> This is not good. They want to put Grok in the military.</p>
 <h2 id="section-3">05:22:11</h2>
-Perl Cheat Sheet:
-<pre>
-<p>CONTEXTS SIGILS ref ARRAYS HASHES
-void $scalar SCALAR <span class="citation" data-cites="array">@array</span> %hash
-scalar <span class="citation" data-cites="array">@array</span> ARRAY <span class="citation" data-cites="array">@array [0, 2]</span> <span class="citation" data-cites="hash">@hash</span>{‘a’, ‘b’}
-list %hash HASH $array[0] $hash{‘a’}
-&amp;sub CODE
-<em>glob GLOB SCALAR VALUES
-FORMAT number, string, ref, glob, undef
+<p>Perl Cheat Sheet:</p>
+<pre><code>CONTEXTS  SIGILS  ref        ARRAYS        HASHES
+void      $scalar SCALAR     @array        %hash
+scalar    @array  ARRAY      @array[0, 2]  @hash{&#39;a&#39;, &#39;b&#39;}
+list      %hash   HASH       $array[0]     $hash{&#39;a&#39;}
+          &amp;sub    CODE
+          *glob   GLOB       SCALAR VALUES
+                  FORMAT     number, string, ref, glob, undef
 REFERENCES
-  reference <span class="math display">$$foo[1]       aka $foo-&gt;[1]
-$@%&amp;*  dereference     $$</span>foo{bar} aka $foo-&gt;{bar}
-[] anon. arrayref <span class="math inline">${$</span>$foo[1]}[2] aka $foo-&gt;[1]-&gt;[2]
-{} anon. hashref <span class="math inline">${$</span>$foo[1]}[2] aka <span class="math inline">$foo-&gt;[1][2]
+\      reference       $$foo[1]       aka $foo-&gt;[1]
+$@%&amp;*  dereference     $$foo{bar}     aka $foo-&gt;{bar}
+[]     anon. arrayref  ${$$foo[1]}[2] aka $foo-&gt;[1]-&gt;[2]
+{}     anon. hashref   ${$$foo[1]}[2] aka $foo-&gt;[1][2]
 \()    list of refs
                        SYNTAX
 OPERATOR PRECEDENCE    foreach (LIST) { }     for (a;b;c) { }
@@ -184,7 +183,7 @@ OPERATOR PRECEDENCE    foreach (LIST) { }     for (a;b;c) { }
 ! ~ \ u+ u-            given   (e) { when (e) {} default {} }
 =~ !~
 * / % x                 NUMBERS vs STRINGS  FALSE vs TRUE
-+ - .                   =          =        undef, "", 0, "0"
++ - .                   =          =        undef, &quot;&quot;, 0, &quot;0&quot;
 &lt;&lt; &gt;&gt;                   +          .        anything else
 named uops              == !=      eq ne
 &lt; &gt; &lt;= &gt;= lt gt le ge   &lt; &gt; &lt;= &gt;=  lt gt le ge
@@ -192,43 +191,42 @@ named uops              == !=      eq ne
 &amp;
 | ^             REGEX MODIFIERS       REGEX METACHARS
 &amp;&amp;              /i case insensitive   ^      string begin
-|| //           /m line based ^$</span> $ str end (bfr )
-.. … /s . includes + one or more
-?: /x /xx ign. wh.space </em> zero or more
-= += last goto /p preserve ? zero or one
-, =&gt; /a ASCII /aa safe {3,7} repeat in range
-list ops /l locale /d dual | alternation
-not /u Unicode [] character class
-and /e evaluate /ee rpts oundary
-or xor /g global string end
-/o compile pat once (p) capture
-DEBUG (?:p) no capture
--MO=Deparse REGEX CHARCLASSES (?#t) comment
--MO=Terse . [^\n] (?=p) ZW pos ahead
--D## whitespace (?!p) ZW neg ahead
--d:Trace word chars (?&lt;=p) ZW pos behind 
-igits (?&lt;!p) ZW neg behind
-CONFIGURATION named property (?&gt;p) no backtrack
-perl -V:ivsize oriz.wh.space (?|p|p)branch reset
-linebreak (?<n>p)named capture
-egate  ref to named cap
-keep left part
+|| //           /m line based ^$      $      str end (bfr \n)
+.. ...          /s . includes \n      +      one or more
+?:              /x /xx ign. wh.space  *      zero or more
+= += last goto  /p preserve           ?      zero or one
+, =&gt;            /a ASCII    /aa safe  {3,7}  repeat in range
+list ops        /l locale   /d  dual  |      alternation
+not             /u Unicode            []     character class
+and             /e evaluate /ee rpts  \b     boundary
+or xor          /g global             \z     string end
+                /o compile pat once   (p)    capture
+DEBUG                                 (?:p)  no capture
+-MO=Deparse     REGEX CHARCLASSES     (?#t)  comment
+-MO=Terse       .   [^\n]             (?=p)  ZW pos ahead
+-D##            \s  whitespace        (?!p)  ZW neg ahead
+-d:Trace        \w  word chars        (?&lt;=p) ZW pos behind \K
+                \d  digits            (?&lt;!p) ZW neg behind
+CONFIGURATION   \pP named property    (?&gt;p)  no backtrack
+perl -V:ivsize  \h  horiz.wh.space    (?|p|p)branch reset
+                \R  linebreak         (?&lt;n&gt;p)named capture
+                \S \W \D \H negate    \g{n}  ref to named cap
+                                      \K     keep left part
 FUNCTION RETURN LISTS
-stat localtime caller SPECIAL VARIABLES
-0 dev 0 second 0 package $_ default variable
-1 ino 1 minute 1 filename $0 program name
-2 mode 2 hour 2 line $/ input separator
-3 nlink 3 day 3 subroutine $  output separator
-4 uid 4 month-1 4 hasargs $| autoflush
-5 gid 5 year-1900 5 wantarray $! sys/libcall error
-6 rdev 6 weekday 6 evaltext $@ eval error
-7 size 7 yearday 7 is_require $$ process ID
-8 atime 8 is_dst 8 hints $. line number
-9 mtime 9 bitmask <span class="citation" data-cites="ARGV">@ARGV</span> command line args
-10 ctime 10 hinthash <span class="citation" data-cites="INC">@INC</span> include paths
-11 blksz 3..10 only <span class="citation" data-cites="_">@_</span> subroutine args
-12 blcks with EXPR %ENV environment
-&lt;&gt;</p></p>
+stat      localtime    caller         SPECIAL VARIABLES
+ 0 dev    0 second      0 package     $_    default variable
+ 1 ino    1 minute      1 filename    $0    program name
+ 2 mode   2 hour        2 line        $/    input separator
+ 3 nlink  3 day         3 subroutine  $\    output separator
+ 4 uid    4 month-1     4 hasargs     $|    autoflush
+ 5 gid    5 year-1900   5 wantarray   $!    sys/libcall error
+ 6 rdev   6 weekday     6 evaltext    $@    eval error
+ 7 size   7 yearday     7 is_require  $$    process ID
+ 8 atime  8 is_dst      8 hints       $.    line number
+ 9 mtime                9 bitmask     @ARGV command line args
+10 ctime               10 hinthash    @INC  include paths
+11 blksz               3..10 only     @_    subroutine args
+12 blcks               with EXPR      %ENV  environment</code></pre></p>
 <p class='ascii-art'><span style="color:#f92461;"> </span><span style="color:#f82165;">_</span><span style="color:#f71e69;">_</span><span style="color:#f51c6e;">_</span><span style="color:#f41972;">_</span><span style="color:#f21776;">_</span><span style="color:#f0147a;"> </span><span style="color:#ee127e;"> </span><span style="color:#ec1083;"> </span><span style="color:#ea0e87;"> </span><span style="color:#e70c8b;"> </span><span style="color:#e50a8f;"> </span><span style="color:#e20994;"> </span><span style="color:#df0798;"> </span><span style="color:#dd069c;"> </span><span style="color:#da05a0;"> </span><span style="color:#d704a4;"> </span><span style="color:#d303a8;"> </span><span style="color:#d002ac;"> </span><span style="color:#cd02b0;"> </span><span style="color:#c901b4;"> </span><span style="color:#c601b8;">_</span><span style="color:#c201bb;"> </span><span style="color:#bf01bf;">_</span><span style="color:#bb01c3;">_</span><span style="color:#b701c6;">_</span><span style="color:#b301ca;">_</span><span style="color:#b002cd;">_</span><span style="color:#ac02d1;"> </span><span style="color:#a803d4;"> </span><span style="color:#a404d7;"> </span><span style="color:#a005da;"> </span><span style="color:#9b06dd;"> </span><span style="color:#9708e0;"> </span><span style="color:#9309e2;"> </span><span style="color:#8f0be5;">_</span><span style="color:#8b0ce7;"> </span><span style="color:#870eea;"> </span><span style="color:#8210ec;"> </span><span style="color:#7e12ee;"> </span><span style="color:#7a14f0;"> </span><span style="color:#7617f2;"> </span><span style="color:#7119f4;"> </span><span style="color:#6d1cf5;"> </span><span style="color:#691ff7;"> </span><span style="color:#6521f8;"> </span><span style="color:#6124fa;"> </span><span style="color:#5d27fb;"> </span><span style="color:#592afc;"> </span><span style="color:#552dfc;"> </span><span style="color:#5131fd;"> </span><span style="color:#4d34fe;">_</span><span style="color:#4938fe;">_</span><span style="color:#453bfe;">_</span><span style="color:#413ffe;">_</span><span style="color:#3e42fe;"> </span><span style="color:#3a46fe;"> </span><span style="color:#374afe;"> </span><span style="color:#334efe;">_</span><span style="color:#3052fd;">_</span><span style="color:#2d56fc;">_</span><span style="color:#295afb;"> </span><span style="color:#265efa;">_</span><span style="color:#2362f9;">_</span><span style="color:#2166f8;">_</span><span style="color:#1e6af7;">_</span><span style="color:#1b6ef5;"> </span><span style="color:#1973f3;"> </span><span style="color:#1677f2;"> </span><span style="color:#147bf0;">_</span><span style="color:#127fee;">_</span><span style="color:#1083eb;"> </span><span style="color:#0e88e9;"> </span><span style="color:#0c8ce7;"> </span><span style="color:#0a90e4;"></span>
 <span style="color:#f51c6e;">|</span><span style="color:#f41972;">_</span><span style="color:#f21776;"> </span><span style="color:#f0147a;"> </span><span style="color:#ee127e;"> </span><span style="color:#ec1083;">_</span><span style="color:#ea0e87;">|</span><span style="color:#e70c8b;"> </span><span style="color:#e50a8f;"> </span><span style="color:#e20994;"> </span><span style="color:#df0798;">_</span><span style="color:#dd069c;"> </span><span style="color:#da05a0;"> </span><span style="color:#d704a4;">_</span><span style="color:#d303a8;">_</span><span style="color:#d002ac;">_</span><span style="color:#cd02b0;"> </span><span style="color:#c901b4;"> </span><span style="color:#c601b8;"> </span><span style="color:#c201bb;"> </span><span style="color:#bf01bf;">/</span><span style="color:#bb01c3;"> </span><span style="color:#b701c6;">|</span><span style="color:#b301ca;">_</span><span style="color:#b002cd;">_</span><span style="color:#ac02d1;">_</span><span style="color:#a803d4;"> </span><span style="color:#a404d7;">/</span><span style="color:#a005da;"> </span><span style="color:#9b06dd;"> </span><span style="color:#9708e0;"> </span><span style="color:#9309e2;"> </span><span style="color:#8f0be5;"> </span><span style="color:#8b0ce7;"> </span><span style="color:#870eea;">|</span><span style="color:#8210ec;"> </span><span style="color:#7e12ee;">|</span><span style="color:#7a14f0;"> </span><span style="color:#7617f2;">_</span><span style="color:#7119f4;">_</span><span style="color:#6d1cf5;"> </span><span style="color:#691ff7;">_</span><span style="color:#6521f8;"> </span><span style="color:#6124fa;">_</span><span style="color:#5d27fb;"> </span><span style="color:#592afc;">_</span><span style="color:#552dfc;">_</span><span style="color:#5131fd;"> </span><span style="color:#4d34fe;"> </span><span style="color:#4938fe;"> </span><span style="color:#453bfe;">|</span><span style="color:#413ffe;">_</span><span style="color:#3e42fe;">_</span><span style="color:#3a46fe;">_</span><span style="color:#374afe;"> </span><span style="color:#334efe;">\</span><span style="color:#3052fd;"> </span><span style="color:#2d56fc;">/</span><span style="color:#295afb;"> </span><span style="color:#265efa;">_</span><span style="color:#2362f9;"> </span><span style="color:#2166f8;">\</span><span style="color:#1e6af7;">_</span><span style="color:#1b6ef5;">_</span><span style="color:#1973f3;">_</span><span style="color:#1677f2;"> </span><span style="color:#147bf0;">\</span><span style="color:#127fee;"> </span><span style="color:#1083eb;">/</span><span style="color:#0e88e9;"> </span><span style="color:#0c8ce7;">/</span><span style="color:#0a90e4;">_</span><span style="color:#0994e2;"> </span><span style="color:#0798df;"> </span><span style="color:#069ddc;"></span>
 <span style="color:#f0147a;"> </span><span style="color:#ee127e;"> </span><span style="color:#ec1083;">|</span><span style="color:#ea0e87;"> </span><span style="color:#e70c8b;">|</span><span style="color:#e50a8f;">|</span><span style="color:#e20994;"> </span><span style="color:#df0798;">|</span><span style="color:#dd069c;"> </span><span style="color:#da05a0;">|</span><span style="color:#d704a4;"> </span><span style="color:#d303a8;">|</span><span style="color:#d002ac;">/</span><span style="color:#cd02b0;"> </span><span style="color:#c901b4;">_</span><span style="color:#c601b8;"> </span><span style="color:#c201bb;">\</span><span style="color:#bf01bf;"> </span><span style="color:#bb01c3;"> </span><span style="color:#b701c6;"> </span><span style="color:#b301ca;">|</span><span style="color:#b002cd;"> </span><span style="color:#ac02d1;">|</span><span style="color:#a803d4;"> </span><span style="color:#a404d7;">|</span><span style="color:#a005da;">_</span><span style="color:#9b06dd;"> </span><span style="color:#9708e0;">\</span><span style="color:#9309e2;"> </span><span style="color:#8f0be5;"> </span><span style="color:#8b0ce7;"> </span><span style="color:#870eea;">_</span><span style="color:#8210ec;"> </span><span style="color:#7e12ee;"> </span><span style="color:#7a14f0;">|</span><span style="color:#7617f2;"> </span><span style="color:#7119f4;">|</span><span style="color:#6d1cf5;">/</span><span style="color:#691ff7;"> </span><span style="color:#6521f8;">_</span><span style="color:#6124fa;">`</span><span style="color:#5d27fb;"> </span><span style="color:#592afc;">|</span><span style="color:#552dfc;"> </span><span style="color:#5131fd;">'</span><span style="color:#4d34fe;">_</span><span style="color:#4938fe;"> </span><span style="color:#453bfe;">\</span><span style="color:#413ffe;"> </span><span style="color:#3e42fe;"> </span><span style="color:#3a46fe;"> </span><span style="color:#374afe;"> </span><span style="color:#334efe;">_</span><span style="color:#3052fd;">_</span><span style="color:#2d56fc;">)</span><span style="color:#295afb;"> </span><span style="color:#265efa;">|</span><span style="color:#2362f9;"> </span><span style="color:#2166f8;">|</span><span style="color:#1e6af7;"> </span><span style="color:#1b6ef5;">|</span><span style="color:#1973f3;"> </span><span style="color:#1677f2;">|</span><span style="color:#147bf0;">_</span><span style="color:#127fee;">_</span><span style="color:#1083eb;">)</span><span style="color:#0e88e9;"> </span><span style="color:#0c8ce7;">|</span><span style="color:#0a90e4;"> </span><span style="color:#0994e2;">'</span><span style="color:#0798df;">_</span><span style="color:#069ddc;"> </span><span style="color:#05a1d9;">\</span><span style="color:#04a5d6;"> </span><span style="color:#03a9d3;"></span>
