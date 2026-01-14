@@ -145,7 +145,76 @@
 <h2 id="section-1">03:06:20</h2>
 <p>It’s 3 am and I had to close the window because of a strong perfume coming in. Who the fuck is up 3 am and what are they doing that would make such a strong smell that the neighbors have to shut their windows?</p>
 <h2 id="section-2">04:36:12</h2>
-<p>Looks like they are going all in with AI. Pete Hegseth want to use it for the Department of War <a href="https://youtu.be/37rV4AJvaxk?si=4tuTRZTdNcdRT28n">https://youtu.be/37rV4AJvaxk?si=4tuTRZTdNcdRT28n</a> This is not good. They want to put Grok in the military.</p></p>
+<p>Looks like they are going all in with AI. Pete Hegseth want to use it for the Department of War <a href="https://youtu.be/37rV4AJvaxk?si=4tuTRZTdNcdRT28n">https://youtu.be/37rV4AJvaxk?si=4tuTRZTdNcdRT28n</a> This is not good. They want to put Grok in the military.</p>
+<h2 id="section-3">05:22:11</h2>
+Perl Cheat Sheet:
+<pre>
+<p>CONTEXTS SIGILS ref ARRAYS HASHES
+void $scalar SCALAR <span class="citation" data-cites="array">@array</span> %hash
+scalar <span class="citation" data-cites="array">@array</span> ARRAY <span class="citation" data-cites="array">@array [0, 2]</span> <span class="citation" data-cites="hash">@hash</span>{‘a’, ‘b’}
+list %hash HASH $array[0] $hash{‘a’}
+&amp;sub CODE
+<em>glob GLOB SCALAR VALUES
+FORMAT number, string, ref, glob, undef
+REFERENCES
+  reference <span class="math display">$$foo[1]       aka $foo-&gt;[1]
+$@%&amp;*  dereference     $$</span>foo{bar} aka $foo-&gt;{bar}
+[] anon. arrayref <span class="math inline">${$</span>$foo[1]}[2] aka $foo-&gt;[1]-&gt;[2]
+{} anon. hashref <span class="math inline">${$</span>$foo[1]}[2] aka <span class="math inline">$foo-&gt;[1][2]
+\()    list of refs
+                       SYNTAX
+OPERATOR PRECEDENCE    foreach (LIST) { }     for (a;b;c) { }
+-&gt;                     while   (e) { }        until (e)   { }
+++ --                  if      (e) { } elsif (e) { } else { }
+**                     unless  (e) { } elsif (e) { } else { }
+! ~ \ u+ u-            given   (e) { when (e) {} default {} }
+=~ !~
+* / % x                 NUMBERS vs STRINGS  FALSE vs TRUE
++ - .                   =          =        undef, "", 0, "0"
+&lt;&lt; &gt;&gt;                   +          .        anything else
+named uops              == !=      eq ne
+&lt; &gt; &lt;= &gt;= lt gt le ge   &lt; &gt; &lt;= &gt;=  lt gt le ge
+== != &lt;=&gt; eq ne cmp ~~  &lt;=&gt;        cmp
+&amp;
+| ^             REGEX MODIFIERS       REGEX METACHARS
+&amp;&amp;              /i case insensitive   ^      string begin
+|| //           /m line based ^$</span> $ str end (bfr )
+.. … /s . includes + one or more
+?: /x /xx ign. wh.space </em> zero or more
+= += last goto /p preserve ? zero or one
+, =&gt; /a ASCII /aa safe {3,7} repeat in range
+list ops /l locale /d dual | alternation
+not /u Unicode [] character class
+and /e evaluate /ee rpts oundary
+or xor /g global string end
+/o compile pat once (p) capture
+DEBUG (?:p) no capture
+-MO=Deparse REGEX CHARCLASSES (?#t) comment
+-MO=Terse . [^\n] (?=p) ZW pos ahead
+-D## whitespace (?!p) ZW neg ahead
+-d:Trace word chars (?&lt;=p) ZW pos behind 
+igits (?&lt;!p) ZW neg behind
+CONFIGURATION named property (?&gt;p) no backtrack
+perl -V:ivsize oriz.wh.space (?|p|p)branch reset
+linebreak (?<n>p)named capture
+egate  ref to named cap
+keep left part
+FUNCTION RETURN LISTS
+stat localtime caller SPECIAL VARIABLES
+0 dev 0 second 0 package $_ default variable
+1 ino 1 minute 1 filename $0 program name
+2 mode 2 hour 2 line $/ input separator
+3 nlink 3 day 3 subroutine $  output separator
+4 uid 4 month-1 4 hasargs $| autoflush
+5 gid 5 year-1900 5 wantarray $! sys/libcall error
+6 rdev 6 weekday 6 evaltext $@ eval error
+7 size 7 yearday 7 is_require $$ process ID
+8 atime 8 is_dst 8 hints $. line number
+9 mtime 9 bitmask <span class="citation" data-cites="ARGV">@ARGV</span> command line args
+10 ctime 10 hinthash <span class="citation" data-cites="INC">@INC</span> include paths
+11 blksz 3..10 only <span class="citation" data-cites="_">@_</span> subroutine args
+12 blcks with EXPR %ENV environment
+&lt;&gt;</p></p>
         </main>
     </body>
 </html>
