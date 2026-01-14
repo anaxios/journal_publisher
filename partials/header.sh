@@ -39,6 +39,9 @@ header() {
         font-size: 0.75rem;
         font-weight: bold;
       }
+      div {
+
+      }
       main {
         background-color: #121212;
         max-width: 38.5rem;
@@ -87,6 +90,11 @@ header() {
           rgba(48, 122, 197, 0.0802696078431373) 39%,
           rgba(197, 122, 48, 0.0718662464985994) 91%
         );
+      }
+      .flow > *:where(:not(:last-child)) {
+        --gap: var(--xxl);
+        margin-bottom: var(--gap);
+        /* outline: 1px solid red; */
       }
 }
     </style>
