@@ -71,7 +71,9 @@ main() {
     # Add weather
     weather html  | nb add interstitial_journal/"$(today)"
 
-    echo -e "\n## $(now)" | nb edit interstitial_journal/"$(today)" --edit
+    echo -e "\n## $(now)" | nb edit interstitial_journal/"$(today)"
+
+    nb edit interstitial_journal/"$(today)"
     publish -p
 }
 
