@@ -2,6 +2,7 @@
 
 LOCATION="$WTTR_LOCATION"
 WEATHER_CACHE="/tmp/weather"
+FILE_NAME="$(today).md"
 
 while getopts "lwe" opt; do
     case "$opt" in
@@ -12,7 +13,7 @@ while getopts "lwe" opt; do
             WEATHER=1
             ;;
         e)
-            nb edit interstitial_journal/"$(today)"
+            nb edit interstitial_journal/"$FILE_NAME"
             publish -p
             exit
             ;;
@@ -42,39 +43,39 @@ main() {
 #        echo "fart"
 #    fi
 
-    if nb interstitial_journal/ | grep "$(today)"; then
+    if nb interstitial_journal/ | grep "$FILE_NAME"; then
        # if  [[ ! -s "$WEATHER_CACHE" ]] || [[ "$(stat -c %Y "$WEATHER_CACHE")" -gt "$(date -d '6 hours ago' +'%s')" ]]; then
-       #     echo -e "\n\n$(weather_ascii)" | nb edit interstitial_journal/"$(today)"
+       #     echo -e "\n\n$(weather_ascii)" | nb edit interstitial_journal/"$FILE_NAME"
        # fi
 
         #if [[ $WEATHER ]]; then
-        #    echo -e "\n<pre class="ascii-art">" | nb edit interstitial_journal/"$(today)"
-        #    weather_ascii | nb edit interstitial_journal/"$(today)"
-        #    echo -e "\n</pre>" | nb edit interstitial_journal/"$(today)"
+        #    echo -e "\n<pre class="ascii-art">" | nb edit interstitial_journal/"$FILE_NAME"
+        #    weather_ascii | nb edit interstitial_journal/"$FILE_NAME"
+        #    echo -e "\n</pre>" | nb edit interstitial_journal/"$FILE_NAME"
         #fi
 
-        echo -e "\n## $(now)" | nb edit interstitial_journal/"$(today)"
+        echo -e "\n## $(now)" | nb edit interstitial_journal/"$FILE_NAME"
 
         if [[ $CURRENTLY_LISTENING ]]; then
-            echo -e "\n<pre class="ascii-art">" | nb edit interstitial_journal/"$(today)"
-            echo -e "Currently listening to: $(mpc current)" | cowsay | nb edit interstitial_journal/"$(today)"
-            echo -e "\n</pre>" | nb edit interstitial_journal/"$(today)"
+            echo -e "\n<pre class="ascii-art">" | nb edit interstitial_journal/"$FILE_NAME"
+            echo -e "Currently listening to: $(mpc current)" | cowsay | nb edit interstitial_journal/"$FILE_NAME"
+            echo -e "\n</pre>" | nb edit interstitial_journal/"$FILE_NAME"
         fi
 
-        nb edit interstitial_journal/"$(today)"
+        nb edit interstitial_journal/"$FILE_NAME"
         publish -p
         exit
     fi
 
-    #nb add interstitial_journal/"$(today)"
+    #nb add interstitial_journal/"$FILE_NAME"
 
     # Add weather
-    weather html  | nb add interstitial_journal/"$(today)"
+    weather html  | nb add interstitial_journal/"$FILE_NAME"
 
-    echo -e "\n## $(now)" | nb edit interstitial_journal/"$(today)"
+    echo -e "\n## $(now -d)" | nb edit interstitial_journal/"$FILE_NAME"
 
-    nb edit interstitial_journal/"$(today)"
-    publish -p
+    nb edit interstitial_journal/"$FILE_NAME"
+    #publish -p
 }
 
 main
