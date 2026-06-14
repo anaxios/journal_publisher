@@ -2,6 +2,7 @@
 
 footer() {
     cat << HEREDOC
+            <script src=./oneko.js></script>
         </main>
     </body>
 </html>
