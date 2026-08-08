@@ -115,7 +115,7 @@ main() {
 
     source ./partials/header.sh
     source ./partials/footer.sh
-    cp -r "$OUTPUT_DIR"/* "$INCLUDES_DIR"/
+    cp -r  "$INCLUDES_DIR"/* "$OUTPUT_DIR"/
 
     entries=($(nb list interstitial_journal/ | grep --color=never -oE '[0-9]{4}-[0-9]{2}-[0-9]{2}' | sort -r))
 
